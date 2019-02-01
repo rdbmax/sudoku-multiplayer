@@ -1,0 +1,25 @@
+.NumericPad-wrapper {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    transform: translateY(0%);
+    transition: transform .3s linear;
+}
+
+.NumericPad-wrapper.show {
+    transform: translateY(150%);
+}
+
+.NumericPad-key {
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+    background-color: #3f3f3f;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 17px;
+    padding-top: 4px;
+    box-sizing: border-box;
+    margin: 2px;
+}

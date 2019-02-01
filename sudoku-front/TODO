@@ -1,0 +1,43 @@
+- [x] [UI] Sudoku grid
+
+- [] [UI] create game
+- [Redux] sync state with socketIO
+ - [] game ended event
+ - [] join
+ - [] start
+
+
+
+
+US:
+
+- User A (A)
+    open app
+    it check if there is in LS a gameToken and a playerToken
+        if yes it open the game
+        if no it opens the menu
+            create a game providing a game name
+            it opens a page with
+                an hiden grid
+                a message `Waiting for a player`
+                an URL to let a player join the game
+            When User B (B) open the page the 2 players can start the game
+
+- B
+    open the link provided by A
+    it opens a page with the grid
+    the game start
+
+SERVER
+    '/create/:party'
+        generate the grid
+        a token for the party
+        an URL waiting for 2 players
+
+    '/join/:partyToken/:?playerToken'
+        if playerToken is provided and match a player in the game
+            it return the game object
+        if playerToken is not provided and 2 player exist in the game
+            it returns that the game is full
+        if playerToken is not provided and less than 2 player exist in the game
+            it create a playerToken, add it to the game and return the game
